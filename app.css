@@ -1,5 +1,7 @@
-#hiTag{
+#hiTag {
     color: red;
-    font: bolder;
-    font-size: larger;
+}
+
+#h2Tag {
+    color: green;
 }
