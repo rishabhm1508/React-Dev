@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "parcel": "^2.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "name": "react-dev-rishabhm",
+  "description": "React foundations and some playaround",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "process": "^0.11.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishabhm1508/React-Dev.git"
+  },
+  "author": "Rishabh Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishabhm1508/React-Dev/issues"
+  },
+  "homepage": "https://github.com/rishabhm1508/React-Dev#readme",
+  "browserslist":["last 2 versions"]
+}
