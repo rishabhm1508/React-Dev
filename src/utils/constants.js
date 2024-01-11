@@ -1,26 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+export const LOGO_URL =
+  "https://static.vecteezy.com/system/resources/thumbnails/008/687/818/small/food-delivery-logo-free-vector.jpg";
+export const REST_IMG_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-/**
- * Food Order Application
- *
- * Header Component
- *  - Logo Component
- *  - Navbar Component
- *
- * Body Component
- *  - Search Component
- *  - Cards Container Component
- *    - Cards Component
- *
- * Footer
- *  - License
- *  - Copyright
- *  - Contact
- *  - Address
- */
-
-const restaurantsList = [
+export const restaurantsList = [
   {
     info: {
       id: "457821",
@@ -1491,83 +1474,3 @@ const restaurantsList = [
     },
   },
 ];
-
-const HeaderComponent = () => {
-  return (
-    <div className="header display-flex-justify-content">
-      <div>
-        <img
-          className="app-logo"
-          src="https://static.vecteezy.com/system/resources/thumbnails/008/687/818/small/food-delivery-logo-free-vector.jpg"
-        />
-      </div>
-
-      <div className="nav-list">
-        <ul className="display-flex-justify-content">
-          <li className="list-item">Home</li>
-          <li className="list-item">About Us</li>
-          <li className="list-item">Cart</li>
-          <li className="list-item">Login</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestuarantComponent = ({ restDetails }) => {
-  return (
-    <div className="card">
-      <img
-        className="rest-img"
-        alt="restuarant-image"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          restDetails?.cloudinaryImageId
-        }
-      ></img>
-      <div className="rest-name align-rest-name">
-        <h3>{restDetails?.name}</h3>
-      </div>
-      <h4 className="cuisine">{restDetails?.cuisines.join(" - ")}</h4>
-      <h4 className="rating">Rating: {restDetails?.avgRating}</h4>
-      <h4 className="minutes">
-        Average Delivery Time: {restDetails?.sla?.deliveryTime} mins
-      </h4>
-    </div>
-  );
-};
-
-const BodyComponent = () => {
-  return (
-    <div className="body">
-      <div>
-        <input className="search" />
-      </div>
-
-      <div className="cards-container">
-        {restaurantsList.map((restaurant) => {
-          if (restaurant.info) {
-            return (
-              <RestuarantComponent
-                key={restaurant.info?.id}
-                restDetails={restaurant.info}
-              />
-            );
-          }
-        })}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app-container">
-      <HeaderComponent />
-      <BodyComponent />
-    </div>
-  );
-};
-
-const renderer = ReactDOM.createRoot(document.getElementById("root"));
-renderer.render(<AppLayout />);
