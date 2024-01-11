@@ -22,22 +22,20 @@ React foundations and some playaround
 
 ## Restuarant Website Desgin
 
-/\*\*
-
-- Food Order Application
--
 - Header Component
-- - Logo Component
-- - Navbar Component
--
+
+  - Logo Component
+  - Navbar Component
+
 - Body Component
-- - Search Component
-- - Cards Container Component
-- - Cards Component
--
+
+  - Search Component
+  - Cards Container Component
+  - Cards Component
+
 - Footer
-- - License
-- - Copyright
-- - Contact
-- - Address
-    \*/
+
+  - License
+  - Copyright
+  - Contact
+  - Address
