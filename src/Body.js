@@ -5,6 +5,8 @@ import Shimmer from "./Shimmer";
 // Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState([]);
+  const [searchTxt, setSearchTxt] = useState("");
+  const [restListOnLoad, setSRstListOnLoad] = useState([]);
 
   /**
    * [] here is dependecies list, if you provide these dependencies,
@@ -22,6 +24,10 @@ const BodyComponent = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9257252&lng=77.7002566&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const jsonData = await data.json();
+    setSRstListOnLoad(
+      jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
 
     setRestuarants(
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -34,10 +40,31 @@ const BodyComponent = () => {
   ) : (
     <div className="body">
       <div>
+        <input
+          onChange={(e) => {
+            setSearchTxt(e.target.value);
+          }}
+          className="searchTxt"
+          value={searchTxt}
+        />
+        <button
+          onClick={() => {
+            let list = [...restListOnLoad];
+            const newList = list.filter((rest) => {
+              return rest.info.name
+                .toLowerCase()
+                .includes(searchTxt.toLowerCase());
+            });
+            setRestuarants(newList);
+          }}
+          className="searchBtn"
+        >
+          Search
+        </button>
         <button
           onClick={() => {
             const newRestList = restuarants.filter(
-              (rest) => rest.info?.avgRating > 4.5
+              (rest) => rest.info?.avgRating > 4
             );
             setRestuarants(newRestList);
           }}
