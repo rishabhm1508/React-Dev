@@ -1,10 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RestuarantComponent from "./Restuarant";
-import { restaurantsList } from "./utils/constants";
+import Shimmer from "./Shimmer";
 
 const BodyComponent = () => {
-  const [restuarants, setRestuarants] = useState(restaurantsList);
-  return (
+  const [restuarants, setRestuarants] = useState([]);
+
+  /**
+   * [] here is dependecies list, if you provide these dependencies,
+   * then code with run again with these dependencies after render cycle. Read more
+   */
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9257252&lng=77.7002566&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const jsonData = await data.json();
+
+    setRestuarants(
+      jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  };
+
+  return !restuarants.length ? (
+    <Shimmer></Shimmer>
+  ) : (
     <div className="body">
       <div>
         <button
