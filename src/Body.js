@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import RestuarantComponent from "./Restuarant";
 import Shimmer from "./Shimmer";
 
+// Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState([]);
 
   /**
    * [] here is dependecies list, if you provide these dependencies,
-   * then code with run again with these dependencies after render cycle. Read more
+   * then code with run again with these dependencies after render cycle. Read more.
+   *
+   * Use Effect - is called when your component rendering is complete. It is also called
+   * for clean up and after component unmounts ( based on some conditions), please read.
    */
   useEffect(() => {
     fetchData();

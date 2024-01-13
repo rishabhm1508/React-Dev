@@ -39,3 +39,7 @@ React foundations and some playaround
   - Copyright
   - Contact
   - Address
+
+## Shimmer UI
+
+- Instead of loader, it is good practice now to use shimmer UI, which is more pleasing to the eye.

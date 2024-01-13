@@ -61,6 +61,7 @@
   color: black;
   background: steelblue;
   padding: 9px;
+  color: white;
   font-size: medium;
   border-radius: 3px;
   cursor: pointer;
@@ -84,4 +85,13 @@
   0%   {background-color: #f2f2f2;}
   50%  {background-color: #e6e6e6;}
   100%  {background-color: #d9d9d9;}
+}
+
+.login{
+  background-color: #4682b4;
+  margin-right: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
 }
