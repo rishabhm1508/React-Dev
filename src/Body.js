@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import RestuarantComponent from "./Restuarant";
 import Shimmer from "./Shimmer";
+import { RESTUARANT_API } from "./utils/constants";
 
 // Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
-  const [restuarants, setRestuarants] = useState([]);
+  const [restuarants, setRestuarants] = useState(null);
   const [searchTxt, setSearchTxt] = useState("");
   const [restListOnLoad, setSRstListOnLoad] = useState([]);
 
@@ -20,9 +21,7 @@ const BodyComponent = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9257252&lng=77.7002566&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTUARANT_API);
     const jsonData = await data.json();
     setSRstListOnLoad(
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -35,7 +34,7 @@ const BodyComponent = () => {
     );
   };
 
-  return !restuarants.length ? (
+  return !restuarants ? (
     <Shimmer></Shimmer>
   ) : (
     <div className="body">
@@ -75,18 +74,22 @@ const BodyComponent = () => {
         </button>
       </div>
 
-      <div className="cards-container">
-        {restuarants.map((restaurant) => {
-          if (restaurant.info) {
-            return (
-              <RestuarantComponent
-                key={restaurant.info?.id}
-                restDetails={restaurant.info}
-              />
-            );
-          }
-        })}
-      </div>
+      {!restuarants?.length ? (
+        <div>No matching restuarant found...!!!</div>
+      ) : (
+        <div className="cards-container">
+          {restuarants.map((restaurant) => {
+            if (restaurant.info) {
+              return (
+                <RestuarantComponent
+                  key={restaurant.info?.id}
+                  restDetails={restaurant.info}
+                />
+              );
+            }
+          })}
+        </div>
+      )}
     </div>
   );
 };
