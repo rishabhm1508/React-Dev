@@ -133,3 +133,60 @@
   color: black;
   width: 20%;
 }
+
+.item-details-container{
+  flex-direction: column;
+  display: flex;
+  border: 1px solid;
+  width: 60%;
+  margin: auto;
+  border-radius: 6px;
+  background-color: lightblue;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.item-image {
+  width: 150px;
+}
+
+.item-name-img-container {
+  display: flex;
+  padding: 2%;
+  justify-content: space-between;
+}
+
+.item-description {
+  width: 75%;
+  color: #404040;
+  margin-bottom: 0;
+}
+
+.item-name {
+  margin-top: 5px;
+}
+
+.seperator{
+  margin: 0 10px;
+}
+
+.veg-classifier {
+  color: green;
+}
+
+.non-veg-classifier {
+  color: red;
+}
+
+.items-page {
+  background: #f2f2f2;
+  padding: 10px;
+}
+
+.item-details-shimmer {
+  background-color: lightgray;
+  width: 60%;
+  height: 150px;
+  animation: shimmar-animation 1s infinite;
+  border: 1px lightgray;
+}

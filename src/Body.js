@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState(null);
   const [searchTxt, setSearchTxt] = useState("");
-  const [restListOnLoad, setSRstListOnLoad] = useState([]);
+  const [restListOnLoad, setRestListOnLoad] = useState([]);
 
   /**
    * [] here is dependecies list, if you provide these dependencies,
@@ -23,7 +23,7 @@ const BodyComponent = () => {
   const fetchData = async () => {
     const data = await fetch(RESTUARANT_API);
     const jsonData = await data.json();
-    setSRstListOnLoad(
+    setRestListOnLoad(
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );

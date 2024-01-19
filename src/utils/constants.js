@@ -8,3 +8,6 @@ export const RESTUARANT_API =
 
 export const ERROR_IMAGE =
   "https://worldanimalfoundation.org/wp-content/uploads/2023/09/Cute-dogs.jpg";
+
+export const RESTAURANT_DETAILS_API =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.579127&lng=73.682105&restaurantId=";

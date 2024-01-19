@@ -10,8 +10,7 @@ import {
 } from "react-router-dom";
 import Contact from "./Contact";
 import Error from "./Error";
-import RestuarantComponent from "./Restuarant";
-import { RestaurantDetails } from "./Restaurant-Details";
+import RestaurantDetailsCard from "./RestaurantDetailsCard";
 
 const AppLayout = () => {
   // addEventListener("scroll", (event) => {
@@ -42,7 +41,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/restuarant/:id",
-        element: <RestaurantDetails />,
+        element: <RestaurantDetailsCard />,
       },
     ],
   },
