@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import RestuarantComponent from "./Restuarant";
 import Shimmer from "./Shimmer";
 import { RESTUARANT_API } from "./utils/constants";
-
+import { Link } from "react-router-dom";
 // Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState(null);
@@ -32,6 +32,25 @@ const BodyComponent = () => {
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
+
+    // const options = {
+    //   root: null,
+    //   threshold: 0.1,
+    // };
+
+    // setTimeout(() => {
+    //   {
+    //     const element = document.querySelectorAll(".card:last-child")[0];
+
+    //     console.log(element);
+
+    //     const intersectionObserver = new IntersectionObserver(() => {
+    //       console.log("in observer");
+    //     }, options);
+
+    //     intersectionObserver.observe(element);
+    //   }
+    // }, 2000);
   };
 
   return !restuarants ? (
@@ -70,7 +89,7 @@ const BodyComponent = () => {
           type="button"
           className="top-rest-btn"
         >
-          Filter Top Restuarants
+          Filter Top Restaurants
         </button>
       </div>
 
@@ -81,10 +100,14 @@ const BodyComponent = () => {
           {restuarants.map((restaurant) => {
             if (restaurant.info) {
               return (
-                <RestuarantComponent
+                // Key will always be on the parent iterative element.
+                <Link
+                  className="restaurant-link"
+                  to={"/restuarant/" + restaurant.info?.id}
                   key={restaurant.info?.id}
-                  restDetails={restaurant.info}
-                />
+                >
+                  <RestuarantComponent restDetails={restaurant.info} />
+                </Link>
               );
             }
           })}

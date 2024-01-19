@@ -2,15 +2,51 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import HeaderComponent from "./Header";
 import BodyComponent from "./Body";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  BrowserRouter,
+} from "react-router-dom";
+import Contact from "./Contact";
+import Error from "./Error";
+import RestuarantComponent from "./Restuarant";
+import { RestaurantDetails } from "./Restaurant-Details";
 
 const AppLayout = () => {
+  // addEventListener("scroll", (event) => {
+  //   console.log(event);
+  // });
+
   return (
     <div className="app-container">
       <HeaderComponent />
-      <BodyComponent />
+      <Outlet />
     </div>
   );
 };
 
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <BodyComponent />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restuarant/:id",
+        element: <RestaurantDetails />,
+      },
+    ],
+  },
+]);
+
 const renderer = ReactDOM.createRoot(document.getElementById("root"));
-renderer.render(<AppLayout />);
+renderer.render(<RouterProvider router={routes} />);

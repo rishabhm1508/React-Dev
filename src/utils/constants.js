@@ -5,3 +5,6 @@ export const REST_IMG_URL =
 
 export const RESTUARANT_API =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9257252&lng=77.7002566&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const ERROR_IMAGE =
+  "https://worldanimalfoundation.org/wp-content/uploads/2023/09/Cute-dogs.jpg";
