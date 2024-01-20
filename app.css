@@ -129,12 +129,12 @@
   border-radius: 5px;
 }
 
-.restaurant-link{
+.restaurant-link {
   color: black;
   width: 20%;
 }
 
-.item-details-container{
+.item-details-container {
   flex-direction: column;
   display: flex;
   border: 1px solid;
@@ -166,7 +166,7 @@
   margin-top: 5px;
 }
 
-.seperator{
+.seperator {
   margin: 0 10px;
 }
 
@@ -189,4 +189,17 @@
   height: 150px;
   animation: shimmar-animation 1s infinite;
   border: 1px lightgray;
+}
+
+.rest-item-categoy-heading {
+  display: flex;
+  margin: auto;
+  font-size: x-large;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rest-item-categoy-heading:first-child {
+  margin-top: 3%;
 }
