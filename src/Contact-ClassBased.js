@@ -1,4 +1,5 @@
 import React from "react";
+import SecondChild from "./SecondChild";
 
 export class ContactClassBased extends React.Component {
   constructor(props) {
@@ -19,17 +20,7 @@ export class ContactClassBased extends React.Component {
         <br />
         Name: {this.props.name}
         <br />
-        <button
-          onClick={() => {
-            // modifying state using set state method. Only phone is modified, and complete component
-            // is re-rendered after React checks for diffs in reconciliation cycle.
-            this.setState({
-              phone: this.state.phone + 1,
-            });
-          }}
-        >
-          Next number
-        </button>
+        <SecondChild parent={this.props.name} name="Inception"></SecondChild>
         <h2>Phone: {this.state.phone}</h2>
       </div>
     );
