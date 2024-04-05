@@ -16,7 +16,7 @@ export const RestaurantDetailsCard = () => {
     const fetchDetails = await fetch(RESTAURANT_DETAILS_API + restId);
     const jsonData = await fetchDetails.json();
     setItem(
-      jsonData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+      jsonData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
     );
   };
   return !item?.length ? (
