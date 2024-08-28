@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const HeaderComponent = () => {
   const [btnName, setBtnName] = useState("Login");
   return (
-    <div className="flex justify-between bg-sky-100">
+    <div className="flex justify-between bg-sky-100 shadow-md shadow-slate-500 rounded-md">
       <div>
         <img className="w-28" src={LOGO_URL} />
       </div>

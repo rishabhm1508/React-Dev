@@ -37,14 +37,14 @@ const BodyComponent = () => {
   return !restuarants ? (
     <Shimmer></Shimmer>
   ) : (
-    <div className="p-4 bg-indigo-50">
+    <div className="p-4">
       <div className="flex space-x-4 mb-4">
         <input
           type="text"
           onChange={(e) => {
             setSearchTxt(e.target.value);
           }}
-          className="w-32 border-zinc-500 border-2 rounded-md"
+          className="w-32 border-zinc-500 border-2 rounded-md p-1"
           value={searchTxt}
         />
         <button
@@ -57,19 +57,19 @@ const BodyComponent = () => {
             });
             setRestuarants(newList);
           }}
-          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2"
+          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2 border-gray-400 hover:border-gray-700 border-2"
         >
           Search
         </button>
         <button
           onClick={() => {
             const newRestList = restuarants.filter(
-              (rest) => rest.info?.avgRating > 4
+              (rest) => rest.info?.avgRating > 4.3
             );
             setRestuarants(newRestList);
           }}
           type="button"
-          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2"
+          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2 border-gray-400 hover:border-gray-700 border-2"
         >
           Filter Top Restaurants
         </button>
