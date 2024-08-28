@@ -1,15 +1,15 @@
 const Shimmer = () => {
   return (
-    <div className="shimmer-container">
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
-      <div className="shimmer"></div>
+    <div className="flex flex-wrap">
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
+      <div className="animate-wiggle w-full bg-gray-200 h-64 m-4"></div>
     </div>
   );
 };

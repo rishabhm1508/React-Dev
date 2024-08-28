@@ -11,25 +11,25 @@ import { Link } from "react-router-dom";
 const HeaderComponent = () => {
   const [btnName, setBtnName] = useState("Login");
   return (
-    <div className="header display-flex-justify-content">
+    <div className="flex justify-between bg-sky-100">
       <div>
-        <img className="app-logo" src={LOGO_URL} />
+        <img className="w-28" src={LOGO_URL} />
       </div>
 
-      <div className="nav-list">
-        <ul className="display-flex-justify-content">
-          <Link to="/">
-            <span className="list-item">Home</span>
+      <div className="p-4 ">
+        <ul className="flex space-x-4 pt-4">
+          <Link className="pt-2" to="/">
+            <span className="">Home</span>
           </Link>
 
-          <Link to="/contact">
+          <Link className="pt-2" to="/contact">
             <span className="list-item">Contact Us</span>
           </Link>
           <button
+            className="bg-green-700 p-2 rounded-md"
             onClick={() => {
               setBtnName(btnName === "Login" ? "Logout" : "Login");
             }}
-            className="login"
           >
             {btnName}
           </button>

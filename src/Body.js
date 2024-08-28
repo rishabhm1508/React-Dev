@@ -32,37 +32,19 @@ const BodyComponent = () => {
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
-
-    // const options = {
-    //   root: null,
-    //   threshold: 0.1,
-    // };
-
-    // setTimeout(() => {
-    //   {
-    //     const element = document.querySelectorAll(".card:last-child")[0];
-
-    //     console.log(element);
-
-    //     const intersectionObserver = new IntersectionObserver(() => {
-    //       console.log("in observer");
-    //     }, options);
-
-    //     intersectionObserver.observe(element);
-    //   }
-    // }, 2000);
   };
 
   return !restuarants ? (
     <Shimmer></Shimmer>
   ) : (
-    <div className="body">
-      <div>
+    <div className="p-4 bg-indigo-50">
+      <div className="flex space-x-4 mb-4">
         <input
+          type="text"
           onChange={(e) => {
             setSearchTxt(e.target.value);
           }}
-          className="searchTxt"
+          className="w-32 border-zinc-500 border-2 rounded-md"
           value={searchTxt}
         />
         <button
@@ -75,7 +57,7 @@ const BodyComponent = () => {
             });
             setRestuarants(newList);
           }}
-          className="searchBtn"
+          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2"
         >
           Search
         </button>
@@ -87,7 +69,7 @@ const BodyComponent = () => {
             setRestuarants(newRestList);
           }}
           type="button"
-          className="top-rest-btn"
+          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2"
         >
           Filter Top Restaurants
         </button>
@@ -96,13 +78,13 @@ const BodyComponent = () => {
       {!restuarants?.length ? (
         <div>No matching restuarant found...!!!</div>
       ) : (
-        <div className="cards-container">
+        <div className="flex flex-wrap">
           {restuarants.map((restaurant) => {
             if (restaurant.info) {
               return (
                 // Key will always be on the parent iterative element.
                 <Link
-                  className="restaurant-link"
+                  className="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 text-black w-3/12 m-4 rounded-md border-gray-300 border-4 hover:border-gray-500 bg-orange-100 hover:shadow-xl hover:shadow-slate-600"
                   to={"/restuarant/" + restaurant.info?.id}
                   key={restaurant.info?.id}
                 >
