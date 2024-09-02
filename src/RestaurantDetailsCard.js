@@ -22,15 +22,15 @@ export const RestaurantDetailsCard = () => {
   return !item?.length ? (
     <RestaurantDetailsShimmer />
   ) : (
-    <div key={restId} className="items-page">
+    <div key={restId} className="py-4">
       {item.map((item, index) => {
         if (index === 0 || index === item.length - 1) {
           return;
         }
         const itemDetails = item?.card?.card;
         return (
-          <div key={itemDetails?.title}>
-            <div className="rest-item-categoy-heading">
+          <div className="px-10" key={itemDetails?.title}>
+            <div className="font-bold flex justify-center">
               {itemDetails?.title}
             </div>
 

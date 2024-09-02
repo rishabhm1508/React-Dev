@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import RestuarantComponent from "./Restuarant";
 import Shimmer from "./Shimmer";
 import { RESTUARANT_API } from "./utils/constants";
 import { Link } from "react-router-dom";
+import { ResturantHigherOrder } from "./Restuarant-Higher-Order";
 // Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState(null);
@@ -84,11 +84,11 @@ const BodyComponent = () => {
               return (
                 // Key will always be on the parent iterative element.
                 <Link
-                  className="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 text-black w-3/12 m-4 rounded-md border-gray-300 border-4 hover:border-gray-500 bg-orange-100 hover:shadow-xl hover:shadow-slate-600"
+                  className="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 text-black w-3/12 m-4 rounded-md border-gray-300 border-4 hover:border-gray-500 bg-red-50 hover:shadow-xl hover:shadow-slate-600"
                   to={"/restuarant/" + restaurant.info?.id}
                   key={restaurant.info?.id}
                 >
-                  <RestuarantComponent restDetails={restaurant.info} />
+                  <ResturantHigherOrder restaurantDetails={restaurant.info} />
                 </Link>
               );
             }

@@ -4,7 +4,7 @@ const RestuarantComponent = ({ restDetails }) => {
   return (
     <div>
       <img
-        className="max-h-72 w-full p-2 rounded-lg"
+        className="max-h-72 w-full p-2"
         alt="restuarant-image"
         src={REST_IMG_URL + restDetails?.cloudinaryImageId}
       ></img>
