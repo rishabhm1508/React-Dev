@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RestaurantDetailsShimmer from "./RestaurantDetailsShimmer";
-import { RestuarantMenuCategoryCard } from "./RestaurantMenuCategory";
-import { RESTAURANT_DETAILS_API, REST_IMG_URL } from "./utils/constants";
+import { RESTAURANT_DETAILS_API } from "./utils/constants";
+import RestuarantCategoryAndItemsDetails from "./RestuarantCategory";
 
 export const RestaurantDetailsCard = () => {
   const { id: restId } = useParams();
   const [item, setItem] = useState([]);
-
+  const [showIndex, setShowIndex] = useState(0);
   useEffect(() => {
     fetchRestDetails();
   }, []);
@@ -22,27 +22,18 @@ export const RestaurantDetailsCard = () => {
   return !item?.length ? (
     <RestaurantDetailsShimmer />
   ) : (
-    <div key={restId} className="py-4">
+    <div key={restId} className="py-4 border-2 border-indigo-200 rounded-lg">
       {item.map((item, index) => {
         if (index === 0 || index === item.length - 1) {
           return;
         }
         const itemDetails = item?.card?.card;
         return (
-          <div className="px-10" key={itemDetails?.title}>
-            <div className="font-bold flex justify-center">
-              {itemDetails?.title}
-            </div>
-
-            {itemDetails?.itemCards?.map((menuItems) => {
-              return (
-                <RestuarantMenuCategoryCard
-                  key={menuItems?.card?.info?.id}
-                  itemDetails={menuItems?.card?.info}
-                />
-              );
-            })}
-          </div>
+          <RestuarantCategoryAndItemsDetails
+            restuarantItemCategory={itemDetails}
+            showAccordion={showIndex === index}
+            setShowIndex={() => setShowIndex(index)}
+          />
         );
       })}
     </div>

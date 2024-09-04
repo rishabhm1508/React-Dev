@@ -15,6 +15,7 @@ export const ResturantHigherOrder = ({ restaurantDetails }) => {
   } else {
     return (
       <RestuarantComponent
+        key={restaurantDetails.id}
         restDetails={restaurantDetails}
       ></RestuarantComponent>
     );

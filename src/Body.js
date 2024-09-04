@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { RESTUARANT_API } from "./utils/constants";
 import { Link } from "react-router-dom";
-import { ResturantHigherOrder } from "./Restuarant-Higher-Order";
+import ResturantHigherOrder from "./RestuarantHigherOrder";
 // Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState(null);
