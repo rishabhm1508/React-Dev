@@ -77,7 +77,7 @@ const BodyComponent = () => {
 
         <input
           type="text"
-          placeholder="Enter user name"
+          placeholder="Enter to set user name"
           onChange={(e) => {
             setUserValueForContext(e.target.value);
           }}
