@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "./utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "./utils/user-context";
 
 /**
  * We have used const for btnName, you might think that we are reassigning it using setBtnName,
@@ -10,6 +11,7 @@ import { Link } from "react-router-dom";
  */
 const HeaderComponent = () => {
   const [btnName, setBtnName] = useState("Login");
+  const { loggedInUser } = useContext(UserContext);
   return (
     <div className="flex justify-between bg-sky-100 shadow-md shadow-slate-500 rounded-md">
       <div>
@@ -19,11 +21,11 @@ const HeaderComponent = () => {
       <div className="p-4 ">
         <ul className="flex space-x-4 pt-4">
           <Link className="pt-2" to="/">
-            <span className="">Home</span>
+            <span className="">Home {loggedInUser}</span>
           </Link>
 
           <Link className="pt-2" to="/contact">
-            <span className="list-item">Contact Us</span>
+            <span className="list-item">Contact Us {loggedInUser}</span>
           </Link>
           <button
             className="bg-green-700 p-2 rounded-md"

@@ -11,6 +11,7 @@ import {
 import Contact from "./Contact";
 import Error from "./Error";
 import RestaurantDetailsCard from "./RestaurantDetailsCard";
+import ContactClassBased from "./Contact-ClassBased";
 
 const AppLayout = () => {
   // addEventListener("scroll", (event) => {
@@ -37,7 +38,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: <ContactClassBased />,
       },
       {
         path: "/restuarant/:id",

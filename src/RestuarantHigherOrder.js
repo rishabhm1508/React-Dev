@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import RestuarantComponent from "./Restuarant";
+import userContext from "./utils/user-context";
 
 export const ResturantHigherOrder = ({ restaurantDetails }) => {
+  const { loggedInUser } = useContext(userContext);
+  console.log(loggedInUser);
   if (restaurantDetails?.id % 2) {
     return (
       <div>

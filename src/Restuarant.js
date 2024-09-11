@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { REST_IMG_URL } from "./utils/constants";
+import userContext from "./utils/user-context";
 
 const RestuarantComponent = ({ restDetails }) => {
+  const { loggedInUser } = useContext(userContext);
   return (
     <div>
       <img
@@ -18,6 +21,13 @@ const RestuarantComponent = ({ restDetails }) => {
       <h4 className="text-sky-800 px-2">
         Average Delivery Time: {restDetails?.sla?.deliveryTime} mins
       </h4>
+      {loggedInUser.length ? (
+        <h4 className="text-fuchsia-800 px-2">
+          Logged In User: {loggedInUser}
+        </h4>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

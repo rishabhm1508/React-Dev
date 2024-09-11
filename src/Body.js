@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { RESTUARANT_API } from "./utils/constants";
 import { Link } from "react-router-dom";
 import ResturantHigherOrder from "./RestuarantHigherOrder";
+import UserContext from "./utils/user-context";
 // Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState(null);
   const [searchTxt, setSearchTxt] = useState("");
   const [restListOnLoad, setRestListOnLoad] = useState([]);
-
+  const [userValueForContext, setUserValueForContext] = useState("Rishabh");
   /**
    * [] here is dependecies list, if you provide these dependencies,
    * then code with run again with these dependencies after render cycle. Read more.
@@ -73,6 +74,16 @@ const BodyComponent = () => {
         >
           Filter Top Restaurants
         </button>
+
+        <input
+          type="text"
+          placeholder="Enter user name"
+          onChange={(e) => {
+            setUserValueForContext(e.target.value);
+          }}
+          className="w-48 border-zinc-500 border-2 rounded-md py-1 px-2"
+          value={userValueForContext}
+        />
       </div>
 
       {!restuarants?.length ? (
@@ -88,7 +99,12 @@ const BodyComponent = () => {
                   to={"/restuarant/" + restaurant.info?.id}
                   key={restaurant.info?.id}
                 >
-                  <ResturantHigherOrder restaurantDetails={restaurant.info} />
+                  {/* <ResturantHigherOrder restaurantDetails={restaurant.info} /> */}
+                  <UserContext.Provider
+                    value={{ loggedInUser: userValueForContext }}
+                  >
+                    <ResturantHigherOrder restaurantDetails={restaurant.info} />
+                  </UserContext.Provider>
                 </Link>
               );
             }
