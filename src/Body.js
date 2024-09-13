@@ -4,6 +4,9 @@ import { RESTUARANT_API } from "./utils/constants";
 import { Link } from "react-router-dom";
 import ResturantHigherOrder from "./RestuarantHigherOrder";
 import UserContext from "./utils/user-context";
+import { Provider } from "react-redux";
+import appStore from "./store/appStore";
+
 // Whenever local state variable changes, component is re-rendered.
 const BodyComponent = () => {
   const [restuarants, setRestuarants] = useState(null);
@@ -24,6 +27,7 @@ const BodyComponent = () => {
   const fetchData = async () => {
     const data = await fetch(RESTUARANT_API);
     const jsonData = await data.json();
+
     setRestListOnLoad(
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -103,6 +107,7 @@ const BodyComponent = () => {
                   <UserContext.Provider
                     value={{ loggedInUser: userValueForContext }}
                   >
+                    {/* this keyword is store and not state */}
                     <ResturantHigherOrder restaurantDetails={restaurant.info} />
                   </UserContext.Provider>
                 </Link>

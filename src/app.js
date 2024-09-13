@@ -12,6 +12,8 @@ import Contact from "./Contact";
 import Error from "./Error";
 import RestaurantDetailsCard from "./RestaurantDetailsCard";
 import ContactClassBased from "./Contact-ClassBased";
+import { Provider } from "react-redux";
+import appStore from "./store/appStore";
 
 const AppLayout = () => {
   // addEventListener("scroll", (event) => {
@@ -20,8 +22,10 @@ const AppLayout = () => {
 
   return (
     <div className="app-container">
-      <HeaderComponent />
-      <Outlet />
+      <Provider store={appStore}>
+        <HeaderComponent />
+        <Outlet />
+      </Provider>
     </div>
   );
 };
