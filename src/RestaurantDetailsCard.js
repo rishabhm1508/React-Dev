@@ -22,7 +22,7 @@ export const RestaurantDetailsCard = () => {
   return !item?.length ? (
     <RestaurantDetailsShimmer />
   ) : (
-    <div key={restId} className="py-4 border-2 border-indigo-200 rounded-lg">
+    <div className="py-4 border-2 border-indigo-200 rounded-lg">
       {item.map((item, index) => {
         if (index === 0 || index === item.length - 1) {
           return;
@@ -30,6 +30,7 @@ export const RestaurantDetailsCard = () => {
         const itemDetails = item?.card?.card;
         return (
           <RestuarantCategoryAndItemsDetails
+            key={`${restId}_${index}`}
             restuarantItemCategory={itemDetails}
             showAccordion={showIndex === index}
             setShowIndex={() => setShowIndex(index)}

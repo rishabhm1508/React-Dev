@@ -2,12 +2,11 @@ import { useDispatch } from "react-redux";
 import { REST_IMG_URL } from "./utils/constants";
 import { addItem } from "./store/cartSlice";
 
-export const RestuarantMenuCategoryCard = ({ itemDetails }) => {
+export const RestuarantMenuCategoryCard = ({ itemDetails, isCart }) => {
   const dispatcher = useDispatch();
 
   const handleAddAction = (event) => {
     // This will log the whole event
-    console.log(event);
     // What redux does is it wraps the content passed in as object like- { payload: 'pizza'}.
     dispatcher(addItem(itemDetails));
   };
@@ -54,7 +53,7 @@ export const RestuarantMenuCategoryCard = ({ itemDetails }) => {
           </div>
         </div>
 
-        <div>
+        <div className="flex justify-center">
           {/* This calls the action on click and click event is logged if you log the argument in handleAddAction function above
           <button
             onClick={handleAddAction}
@@ -82,14 +81,16 @@ export const RestuarantMenuCategoryCard = ({ itemDetails }) => {
           >
             Add Item4
           </button> */}
+          {!isCart && (
+            <button
+              onClick={() => handleAddAction(itemDetails)}
+              className="px-3 py-1 focus:outline-none focus:ring focus:ring-violet-300 absolute
+             bg-violet-500 hover:bg-violet-500 active:bg-gray-700 text-white font-bold mt-2 rounded-md"
+            >
+              Add Item
+            </button>
+          )}
 
-          <button
-            onClick={() => handleAddAction(itemDetails)}
-            className="px-3 py-1 focus:outline-none focus:ring focus:ring-violet-300 
-             bg-violet-500 hover:bg-violet-500 active:bg-gray-700 text-white font-bold  rounded-md ml-12 mt-2"
-          >
-            Add Item
-          </button>
           <img
             className="w-12/12 h-48 m-2 rounded-md"
             src={REST_IMG_URL + itemDetails.imageId}

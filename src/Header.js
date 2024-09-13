@@ -33,22 +33,24 @@ const HeaderComponent = () => {
             <span className="list-item">Contact Us</span>
           </Link>
 
-          <button
-            type="button"
-            data-tooltip-target="tooltip-default"
-            className="bg-green-600 hover:bg-green-800 p-2 rounded-md  text-white font-bold"
-          >
-            Cart Items ( {cartItems.length}
-            {cartItems.length
-              ? cartItems.length === 1
-                ? " Item "
-                : " Items "
-              : " "}
-            )
-          </button>
+          <Link className="pt-2" to="/cart">
+            <button
+              type="button"
+              data-tooltip-target="tooltip-default"
+              className="bg-green-600 hover:bg-green-800 p-2 rounded-md  text-white font-bold"
+            >
+              Cart Items ( {cartItems.length}
+              {cartItems.length
+                ? cartItems.length === 1
+                  ? " Item "
+                  : " Items "
+                : " "}
+              )
+            </button>
+          </Link>
 
           <button
-            className="bg-green-600 hover:bg-green-800 p-2 rounded-md text-white font-bold"
+            className="bg-green-600 hover:bg-green-800 px-4 py-1 rounded-md text-white font-bold"
             onClick={() => {
               setBtnName(btnName === "Login" ? "Logout" : "Login");
             }}

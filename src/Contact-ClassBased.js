@@ -22,7 +22,6 @@ export class ContactClassBased extends React.Component {
         //TODO: need to check how it works Contact Us ( Class Based):
         <UserContext.Consumer>
           {(data) => {
-            console.log(data.loggedInUser);
             this.namer = data.loggedInUser;
           }}
         </UserContext.Consumer>

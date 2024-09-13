@@ -14,12 +14,9 @@ import RestaurantDetailsCard from "./RestaurantDetailsCard";
 import ContactClassBased from "./Contact-ClassBased";
 import { Provider } from "react-redux";
 import appStore from "./store/appStore";
+import CartComponent from "./Cart";
 
 const AppLayout = () => {
-  // addEventListener("scroll", (event) => {
-  //   console.log(event);
-  // });
-
   return (
     <div className="app-container">
       <Provider store={appStore}>
@@ -47,6 +44,10 @@ const routes = createBrowserRouter([
       {
         path: "/restuarant/:id",
         element: <RestaurantDetailsCard />,
+      },
+      {
+        path: "/cart",
+        element: <CartComponent />,
       },
     ],
   },
