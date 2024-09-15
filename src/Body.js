@@ -45,6 +45,7 @@ const BodyComponent = () => {
     <div className="p-4">
       <div className="flex space-x-4 mb-4">
         <input
+          placeholder="Search..."
           type="text"
           onChange={(e) => {
             setSearchTxt(e.target.value);
@@ -62,7 +63,7 @@ const BodyComponent = () => {
             });
             setRestuarants(newList);
           }}
-          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2 border-gray-400 hover:border-gray-700 border-2"
+          className="bg-white text-indigo-600 hover:bg-indigo-700 hover:text-white p-1 rounded-md px-2 border-indigo-700 font-bold border-2"
         >
           Search
         </button>
@@ -74,7 +75,7 @@ const BodyComponent = () => {
             setRestuarants(newRestList);
           }}
           type="button"
-          className="bg-indigo-400 hover:bg-indigo-600 hover:text-white p-1 rounded-md px-2 border-gray-400 hover:border-gray-700 border-2"
+          className="bg-white text-indigo-600 hover:bg-indigo-700 hover:text-white p-1 rounded-md px-2 border-indigo-700 font-bold border-2"
         >
           Filter Top Restaurants
         </button>
@@ -85,7 +86,7 @@ const BodyComponent = () => {
           onChange={(e) => {
             setUserValueForContext(e.target.value);
           }}
-          className="w-48 border-zinc-500 border-2 rounded-md py-1 px-2"
+          className="w-48 border-gray-500 border-2 focus:outline-red-600 focus:outline-2 rounded-md py-1 px-2"
           value={userValueForContext}
         />
       </div>

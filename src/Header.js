@@ -25,19 +25,23 @@ const HeaderComponent = () => {
 
       <div className="p-4 ">
         <ul className="flex space-x-4 pt-4">
-          <Link className="pt-2" to="/">
-            <span className="">Home</span>
+          <Link to="/">
+            <button className="hover:bg-green-700 text-green-600 px-3 py-2 mt-2 rounded-md border-2 border-green-700 hover:text-white font-bold">
+              Home
+            </button>
           </Link>
 
-          <Link className="pt-2" to="/contact">
-            <span className="list-item">Contact Us</span>
+          <Link to="/contact">
+            <button className="hover:bg-green-700 text-green-600 px-3 py-2 mt-2 rounded-md border-2 border-green-700 hover:text-white font-bold">
+              Contact Us
+            </button>
           </Link>
 
-          <Link className="pt-2" to="/cart">
+          <Link to="/cart">
             <button
               type="button"
               data-tooltip-target="tooltip-default"
-              className="bg-green-600 hover:bg-green-800 p-2 rounded-md  text-white font-bold"
+              className="hover:bg-green-700 text-green-600 px-3 py-2 mt-2 rounded-md border-2 border-green-700 hover:text-white font-bold"
             >
               Cart Items ( {cartItems.length}
               {cartItems.length
@@ -49,14 +53,16 @@ const HeaderComponent = () => {
             </button>
           </Link>
 
-          <button
-            className="bg-green-600 hover:bg-green-800 px-4 py-1 rounded-md text-white font-bold"
-            onClick={() => {
-              setBtnName(btnName === "Login" ? "Logout" : "Login");
-            }}
-          >
-            {btnName}
-          </button>
+          <Link>
+            <button
+              className="hover:bg-green-700 text-green-600 px-3 py-2 mt-2 rounded-md border-2 border-green-700 hover:text-white font-bold"
+              onClick={() => {
+                setBtnName(btnName === "Login" ? "Logout" : "Login");
+              }}
+            >
+              {btnName}
+            </button>
+          </Link>
         </ul>
 
         <div
