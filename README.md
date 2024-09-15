@@ -42,4 +42,19 @@ React foundations and some playaround
 
 ## Shimmer UI
 
-- Instead of loader, it is good practice now to use shimmer UI, which is more pleasing to the eye.
+- Instead of loader, it is good practice now to use shimmer UI, which is more
+  pleasing to the eye.
+
+## Types of testing ( developer )
+
+- Unit Testing
+- Integration Testing
+- End to End Testing
+
+# Testing up testing library
+
+- Install React Testing Library
+- Install Jest
+- Install Babel Depedencies
+- Configure Babel in app
+- Configure parcel config file to disable default babel transpilation
