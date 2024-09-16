@@ -1,0 +1,71 @@
+export const mockRestuarant = {
+  id: "699329",
+  name: "The fritter company",
+  cloudinaryImageId: "81a4a575e0298eece46ed46cfe4f21cf",
+  locality: " near aroma spa,quess corp office, little Italy lane",
+  areaName: "#N/A",
+  costForTwo: "₹350 for two",
+  cuisines: [
+    "Burgers",
+    "American",
+    "shawarma",
+    "Rolls & Wraps",
+    "Beverages",
+    "Fast Food",
+    "Continental",
+  ],
+  avgRating: 4.2,
+  parentId: "21135",
+  avgRatingString: "4.2",
+  totalRatingsString: "832",
+  sla: {
+    deliveryTime: 26,
+    lastMileTravel: 5,
+    serviceability: "SERVICEABLE",
+    slaString: "25-30 mins",
+    lastMileTravelString: "5.0 km",
+    iconType: "ICON_TYPE_EMPTY",
+  },
+  availability: {
+    nextCloseTime: "2024-09-17 06:30:00",
+    opened: true,
+  },
+  badges: {},
+  isOpen: true,
+  type: "F",
+  badgesV2: {
+    entityBadges: {
+      imageBased: {},
+      textBased: {},
+      textExtendedBadges: {},
+    },
+  },
+  aggregatedDiscountInfoV3: {
+    header: "₹125 OFF",
+    subHeader: "ABOVE ₹249",
+    discountTag: "FLAT DEAL",
+  },
+  orderabilityCommunication: {
+    title: {},
+    subTitle: {},
+    message: {},
+    customIcon: {},
+  },
+  differentiatedUi: {
+    displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    differentiatedUiMediaDetails: {
+      mediaType: "ADS_MEDIA_ENUM_IMAGE",
+      lottie: {},
+      video: {},
+    },
+  },
+  reviewsSummary: {},
+  displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  restaurantOfferPresentationInfo: {},
+  externalRatings: {
+    aggregatedRating: {
+      rating: "--",
+    },
+  },
+  ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+};

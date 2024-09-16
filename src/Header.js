@@ -40,6 +40,7 @@ const HeaderComponent = () => {
           <Link to="/cart">
             <button
               type="button"
+              data-testid="cartButton"
               data-tooltip-target="tooltip-default"
               className="hover:bg-green-700 text-green-600 px-3 py-2 mt-2 rounded-md border-2 border-green-700 hover:text-white font-bold"
             >
@@ -55,6 +56,7 @@ const HeaderComponent = () => {
 
           <Link>
             <button
+              data-testid="loginButton"
               className="hover:bg-green-700 text-green-600 px-3 py-2 mt-2 rounded-md border-2 border-green-700 hover:text-white font-bold"
               onClick={() => {
                 setBtnName(btnName === "Login" ? "Logout" : "Login");
