@@ -51,7 +51,7 @@ React foundations and some playaround
 - Integration Testing
 - End to End Testing
 
-# Testing up testing library
+# Setting up testing library
 
 - Install React Testing Library
 - Install Jest
