@@ -58,3 +58,11 @@ React foundations and some playaround
 - Install Babel Depedencies
 - Configure Babel in app
 - Configure parcel config file to disable default babel transpilation
+- Writing jest configuration -> npx jest --init.
+- install jest-environemnt-jsdom -> for creating env for js code to run and
+  browser like env
+- install @babel-preset-react and configure it in babel.config.js -> so that jsx
+  code can be written inside tests and babel can convert to html.
+- install npm i @testing-library/react, this also helps in jsx conversion.
+- install @testing-library/jest-dom -> so that we can use the helper function in
+  assertions -> eg .toBeInDocument() ( npm i -d @testing-library/jest-dom).

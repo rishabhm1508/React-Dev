@@ -39,7 +39,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactClassBased />,
+        element: <Contact />,
       },
       {
         path: "/restuarant/:id",
