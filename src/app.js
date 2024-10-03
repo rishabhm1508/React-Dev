@@ -9,14 +9,16 @@ import RestaurantDetailsCard from "./RestaurantDetailsCard";
 import { Provider } from "react-redux";
 import appStore from "./store/appStore";
 import CartComponent from "./Cart";
+import Test from "./goodQuestions";
 
 const AppLayout = () => {
   return (
     <div className="app-container">
-      <Provider store={appStore}>
+      <Test />
+      {/* <Provider store={appStore}>
         <HeaderComponent />
         <Outlet />
-      </Provider>
+      </Provider> */}
     </div>
   );
 };
