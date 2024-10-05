@@ -132,27 +132,119 @@ import { useEffect, useState } from "react";
 // };
 
 // Question 5
-export default Test = () => {
-  const [second, setSecond] = useState(0);
+// export default Test = () => {
+//   const [second, setSecond] = useState(0);
 
-  console.log("in");
+//   console.log("in");
 
-  const clicked = () => {
-    setSecond(second + 1);
-    setSecond(second + 2);
-    setSecond(second + 3);
-  };
+//   const clicked = () => {
+//     setSecond(second + 1);
+//     setSecond(second + 2);
+//     setSecond(second + 3);
+//   };
 
+//   return (
+//     <div>
+//       <p>{second}</p>
+
+//       <button
+//         onClick={clicked}
+//         className="p-2 m-2 bg-black text-white font-bold rounded-md"
+//       >
+//         Click me !!
+//       </button>
+//     </div>
+//   );
+// };
+
+// Question 6
+
+let guest = 0;
+
+function Cup() {
+  // Bad: changing a preexisting variable!
+  guest = guest + 1;
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function Test() {
   return (
-    <div>
-      <p>{second}</p>
-
-      <button
-        onClick={clicked}
-        className="p-2 m-2 bg-black text-white font-bold rounded-md"
-      >
-        Click me !!
-      </button>
-    </div>
+    <>
+      <Cup />
+      <Cup />
+      <Cup />
+    </>
   );
-};
+}
+
+// Question 7
+
+// import { useState } from 'react';
+
+// export default function Counter() {
+//   const [number, setNumber] = useState(0);
+
+//   return (
+//     <>
+//       <h1>{number}</h1>
+//       <button onClick={() => {
+//         setNumber(number + 5);
+//         setNumber(n => n + 1);
+//       }}>Increase the number</button>
+//     </>
+//   )
+// }
+
+// Question 8 -> Very good way of handling object in components,
+// good example - https://react.dev/learn/updating-objects-in-state#treat-state-as-read-only
+
+// import { useState } from 'react';
+
+// export default function Form() {
+//   const [person, setPerson] = useState({
+//     firstName: 'Barbara',
+//     lastName: 'Hepworth',
+//     email: 'bhepworth@sculpture.com'
+//   });
+
+//   function handleChange(e) {
+//     setPerson({
+//       ...person,
+//       [e.target.name]: e.target.value
+//     });
+//   }
+
+//   return (
+//     <>
+//       <label>
+//         First name:
+//         <input
+//           name="firstName"
+//           value={person.firstName}
+//           onChange={handleChange}
+//         />
+//       </label>
+//       <label>
+//         Last name:
+//         <input
+//           name="lastName"
+//           value={person.lastName}
+//           onChange={handleChange}
+//         />
+//       </label>
+//       <label>
+//         Email:
+//         <input
+//           name="email"
+//           value={person.email}
+//           onChange={handleChange}
+//         />
+//       </label>
+//       <p>
+//         {person.firstName}{' '}
+//         {person.lastName}{' '}
+//         ({person.email})
+//       </p>
+//     </>
+//   );
+// }
